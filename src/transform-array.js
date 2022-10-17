@@ -14,6 +14,9 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function transform(arr) {
+  if (!(arr instanceof Array)) {
+    throw new Error('\'arr\' parameter must be an instance of the Array!')
+  };
   if (Array.isArray(arr)) {
     let newArray = [];
     for(let i =0; i < arr.length; i++) {
@@ -23,7 +26,7 @@ function transform(arr) {
             i += 2;
             break;
             case `--discard-prev`:
-              let ind = newArray.indexOf(arr[i-1]);
+              let ind = newArray.indexOf(arr[i]);
               newArray.splice(ind, 1);
               break;
               case `--double-next`:

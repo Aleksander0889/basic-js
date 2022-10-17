@@ -19,7 +19,7 @@ if (s1.length > s2.length) ln = s1.length; else ln = s2.length;
 
 for (var i = 0; i < ln; i++)
 {
-    if (s1[i] == s2[i]) {
+    if (s1[i] === s2[i]) {
          result.push(s2[i]);
     }
 }

@@ -12,19 +12,24 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function getSeason(date) {
- const month = date.getMonth()
- const season =['winter', 'spring', 'summer', 'autumn'];
- const months = [
-  [11, 12, 1]
-  [2, 3, 4]
-  [5, 6, 7]
-  [8, 9, 10]]
-  months.forEach((season, index) => {
- if (season.includes(month)) {}
-    
-  });
-
-  
+  let season ;
+  try {season = date.getMonth();
+  } catch (e) {return 'Unable to determine the time of year!'} 
+ if (Object.prototype.toString.call(data) !== '[object Data]') {
+  throw new Error('Invalid data')
+ }
+ if (season < 1 || season === 0) {
+  return 'Winter'
+ } else if (season <= 4) {
+  return 'Spring'
+ } else if (season <= 7) {
+  return 'summer'
+ } else if (season <=10) {
+  return 'autumn'
+  } else {
+    throw new Error('Invalid data');
+  }
+   console.dir(date)
   // remove line with error and write your code here
 }
 
