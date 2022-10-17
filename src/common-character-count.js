@@ -13,30 +13,18 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function getCommonCharacterCount(s1, s2) {
   let result = []
-  var cache;
-  var cache2;
+  var ln;
+if (s1.length > s2.length) ln = s1.length; else ln = s2.length;
 
-  var ln1 = s1.length
-  ln2 = s2.length;
 
-  for (var i = 0; i < ln1; ++i)
-  {
-      cache = array1[i];
-      for (var j = 0; j < ln2; ++j)
-      {
-          cache2 = array2[j];
-          if (cache === array2[j])
-          {
-              console.log('найдено совпадение: ' + cache);
-              result.push(array2[j]);
-          }
-   
-   }
+for (var i = 0; i < ln; i++)
+{
+    if (s1[i] == s2[i]) {
+         result.push(s2[i]);
+    }
 }
-
 return result
 }
-
 module.exports = {
   getCommonCharacterCount
 };

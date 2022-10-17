@@ -11,8 +11,20 @@ const { NotImplementedError } = require('../extensions/index.js');
  * getSeason(new Date(2020, 02, 31)) => 'spring'
  * 
  */
-function getSeason(/* date */) {
-  throw new NotImplementedError('Not implemented');
+function getSeason(date) {
+ const month = date.getMonth()
+ const season =['winter', 'spring', 'summer', 'autumn'];
+ const months = [
+  [11, 12, 1]
+  [2, 3, 4]
+  [5, 6, 7]
+  [8, 9, 10]]
+  months.forEach((season, index) => {
+ if (season.includes(month)) {}
+    
+  });
+
+  
   // remove line with error and write your code here
 }
 
